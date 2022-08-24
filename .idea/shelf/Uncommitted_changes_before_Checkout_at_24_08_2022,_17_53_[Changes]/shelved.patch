@@ -1,0 +1,16 @@
+Index: product/serializers.py
+===================================================================
+diff --git a/product/serializers.py b/product/serializers.py
+--- a/product/serializers.py	
++++ b/product/serializers.py	
+@@ -8,10 +8,6 @@
+         model = Product
+         fields = ('title', 'price', 'image')
+ 
+-    # def to_representation(self, instance):
+-    #     repr = super().to_representation(instance)
+-    #     repr['rating'] = instance.
+-
+ 
+ class ProductDetailSerializer(serializers.ModelSerializer):
+     class Meta:
