@@ -13,5 +13,5 @@ class Product(models.Model):
         ordering = ['title']
 
     def __str__(self):
-        return f'{self.title} --- {self.price}'
+        return f'{self.title} - - - Цена: {self.price} сом'
 
