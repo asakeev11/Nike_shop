@@ -1,0 +1,394 @@
+Index: ../../DjangoProject/blog_project/.idea/blog_project.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../../DjangoProject/blog_project/.idea/blog_project.iml b/../../DjangoProject/blog_project/.idea/blog_project.iml
+new file mode 100644
+--- /dev/null	
++++ b/../../DjangoProject/blog_project/.idea/blog_project.iml	
+@@ -0,0 +1,14 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<module type="PYTHON_MODULE" version="4">
++  <component name="NewModuleRootManager">
++    <content url="file://$MODULE_DIR$">
++      <excludeFolder url="file://$MODULE_DIR$/venv" />
++    </content>
++    <orderEntry type="jdk" jdkName="Python 3.8 (blog_project)" jdkType="Python SDK" />
++    <orderEntry type="sourceFolder" forTests="false" />
++  </component>
++  <component name="PyDocumentationSettings">
++    <option name="format" value="PLAIN" />
++    <option name="myDocStringFormat" value="Plain" />
++  </component>
++</module>
+\ No newline at end of file
+Index: ../../domashak/pyth.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../../domashak/pyth.py b/../../domashak/pyth.py
+--- a/../../domashak/pyth.py	
++++ b/../../domashak/pyth.py	
+@@ -148,5 +148,43 @@
+ #     with open('google_kazakstan.txt', 'w') as file:
+ #       file.writelines(kz) 
+ 
+-with open('google.kazakstan.txt', 'a+') as file:
+-  file.writelines('hi')
+\ No newline at end of file
++# with open('google.kazakstan.txt', 'a+') as file:
++#   file.writelines('hi')
++
++# with open('task.txt', 'r') as file:
++#   x = file.readlines()
++#   print(x)
++#   print(f'Количество строк - {len(x)}')
++# with open('task.txt', 'r') as file:
++#   print(list(file))
++#   z = list(filter(lambda x: x.split('\n'), file))
++#   for i in range(len(z)):
++#     t = z[i].rstrip('\n')
++#     dlina_str = (len(t))
++#     words = (len(t.split()))
++#     print(f'{t} - Количество символов: {dlina_str}, Количество слов: {words}')
++  
++# file = ['Hi\n', 'My name is Talgat']
++# z = list(filter(lambda x: x.split('\n'), file))
++# for i in range(len(z)):
++#   # print(i)
++#   t = z[i].rstrip('\n')
++#   dlina = len(t)
++#   print(dlina)
++#   words = (len(t.split()))
++#   print(words)
++#   print(dlina)
++
++with open('task.txt', 'r') as file:
++  x = file.readlines()
++  print(len(x))
++with open('task.txt', 'r') as file:
++  z = list(filter(lambda x: x.split('\n'), file))
++  for i in range(len(z)):
++    t = z[i].rstrip('\n')
++    print(t)
++    dlina_stroki = len(t)
++    words = len(t.split())
++    print(dlina_stroki)
++    print(words)
++  
+\ No newline at end of file
+Index: ../../types/praxctice.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../../types/praxctice.py b/../../types/praxctice.py
+--- a/../../types/praxctice.py	
++++ b/../../types/praxctice.py	
+@@ -1,37 +1,37 @@
+-# import random
++import random
+ 
+-# ls = ['Plov', 'Manty', 'Kuurdak', 'Lagman', 'Dymdama']
+-# p = 0
+-# m = 0
+-# k = 0
+-# l = 0
+-# d = 0
+-# for i in range(0, 100000):
+-#     choice = random.choice(ls)
+-#     print(choice)
+-#     if choice.lower() == 'plov':
+-#         p = p + 1 #p += 1 инкремент
+-#     elif choice.lower() == 'manty':
+-#         m += 1
+-#     elif choice.lower() == 'kuurdak':
+-#         k +=1
+-#     elif choice.lower() == 'lagman':
+-#         l += 1
+-#     elif choice.lower() == 'dymdama':
+-#         d += 1
++ls = ['Plov', 'Manty', 'Kuurdak', 'Lagman', 'Dymdama']
++p = 0
++m = 0
++k = 0
++l = 0
++d = 0
++for i in range(0, 100000):
++    choice = random.choice(ls)
++    print(choice)
++    if choice.lower() == 'plov':
++        p = p + 1 #p += 1 инкремент
++    elif choice.lower() == 'manty':
++        m += 1
++    elif choice.lower() == 'kuurdak':
++        k +=1
++    elif choice.lower() == 'lagman':
++        l += 1
++    elif choice.lower() == 'dymdama':
++        d += 1
+     
+-# print(f'Plov: {p} \nM       anty: {m} \nKuurdak: {k} \nLagman: {l}')
++print(f'Plov: {p} \nManty: {m} \nKuurdak: {k} \nLagman: {l}')
+ 
+-# dict_ = {'Plov' : p, 'Manty' : m, 'Kuurdak' : k, 'Lagman' : l, 'Dymdama' : d}
+-# # print(dict_)
+-# result = sorted(dict_.items(), key = lambda x: x[1])
+-# winner = result[-1]
+-# print(f'Победило блюдо {winner[0]}, оно набрало: {winner[1]} баллов')
++dict_ = {'Plov' : p, 'Manty' : m, 'Kuurdak' : k, 'Lagman' : l, 'Dymdama' : d}
++# print(dict_)
++result = sorted(dict_.items(), key = lambda x: x[1])
++winner = result[-1]
++print(f'Победило блюдо {winner[0]}, оно набрало: {winner[1]} баллов')
+ 
+-# lambda x: x[1]
+-# '''=='''
+-# def func(x: tuple):
+-#     return x[1]
++lambda x: x[1]
++'''=='''
++def func(x: tuple):
++    return x[1]
+ 
+ 
+ 
+@@ -83,4 +83,4 @@
+ 
+ 
+ 
+-print(divmod(3,2))
++# print(divmod(3,2))
+Index: ../../commands.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../../commands.py b/../../commands.py
+--- a/../../commands.py	
++++ b/../../commands.py	
+@@ -54,6 +54,23 @@
+ #  mv test.txt ../week2
+  
+  
+- 
+- 
+- 
++# def
++# x = [{'hi' : 1, 'bye' : 2}, {'good' : 3, 'bad' : 4}]
++# x[1]['good'] = 1
++# print(x)
++# x = [{'hi' : 1, 'bye' : 2}, {'good' : 0, 'bad' : 4}]
++# def get_likes(id):
++#     if x[id]['good'] == 0:
++#         x[id]['good'] += 1
++#     else:
++#         x[id]['good'] -= 1
++#     return x
++# print(get_likes(1))
++# print(get_likes(1))
++
++
++x = ['hi', 'bye']
++for i in x:
++
++    z = x.index(i)
++    print(z)
+Index: ../../DjangoProject/shop_api/.idea/shop_api.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../../DjangoProject/shop_api/.idea/shop_api.iml b/../../DjangoProject/shop_api/.idea/shop_api.iml
+new file mode 100644
+--- /dev/null	
++++ b/../../DjangoProject/shop_api/.idea/shop_api.iml	
+@@ -0,0 +1,14 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<module type="PYTHON_MODULE" version="4">
++  <component name="NewModuleRootManager">
++    <content url="file://$MODULE_DIR$">
++      <excludeFolder url="file://$MODULE_DIR$/venv" />
++    </content>
++    <orderEntry type="jdk" jdkName="Python 3.8 (shop_api) (2)" jdkType="Python SDK" />
++    <orderEntry type="sourceFolder" forTests="false" />
++  </component>
++  <component name="PyDocumentationSettings">
++    <option name="format" value="PLAIN" />
++    <option name="myDocStringFormat" value="Plain" />
++  </component>
++</module>
+\ No newline at end of file
+Index: ../../gitlessons/gitlesson.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../../gitlessons/gitlesson.py b/../../gitlessons/gitlesson.py
+--- a/../../gitlessons/gitlesson.py	
++++ b/../../gitlessons/gitlesson.py	
+@@ -44,4 +44,4 @@
+ 
+ # Vetka Talgata
+ #h
+-# 123
+\ No newline at end of file
++# 123..2
+\ No newline at end of file
+Index: ../../DjangoProject/shop_api/account/serializers.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../../DjangoProject/shop_api/account/serializers.py b/../../DjangoProject/shop_api/account/serializers.py
+--- a/../../DjangoProject/shop_api/account/serializers.py	
++++ b/../../DjangoProject/shop_api/account/serializers.py	
+@@ -1,0 +1,95 @@
++from rest_framework import serializers
++from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
++from rest_framework_simplejwt.tokens import RefreshToken, TokenError
++
++from django.contrib.auth import get_user_model, authenticate
++from django.utils.translation import gettext_lazy as _
++
++User = get_user_model()
++
++
++class RegisterSerializer(serializers.ModelSerializer):
++    password2 = serializers.CharField(min_length=6, max_length=100, required=True, write_only=True)
++    password = serializers.CharField(min_length=6, max_length=100, required=True, write_only=True)
++
++    class Meta:
++        model = User
++        fields = ('email', 'password', 'password2')
++
++    def validate(self, attrs):
++        password2 = attrs.pop('password2')
++        if attrs.get('password') != password2:
++            raise serializers.ValidationError('Passwords did not match!')
++        if not attrs.get('password').isalnum():
++            raise serializers.ValidationError('Password field must contain alpha symbols and numbers!')
++        return attrs
++
++    def create(self, validated_data):
++        user = User.objects.create_user(**validated_data)
++        return user
++
++
++class LoginSerializer(TokenObtainPairSerializer):
++    password = serializers.CharField(min_length=6, write_only=True)
++
++    def validate(self, attrs):
++        email = attrs.get('email')
++        password = attrs.pop('password')
++        if not User.objects.filter(email=email).exists():
++            raise serializers.ValidationError('User not found')
++        user = authenticate(email=email, password=password)
++        if user and user.is_active:
++            refresh = self.get_token(user)
++            attrs['refresh'] = str(refresh)
++            attrs['access'] = str(refresh.access_token)
++        else:
++            raise serializers.ValidationError('Invalid password!')
++        return attrs
++
++
++class LogOutSerializer(serializers.Serializer):
++    refresh = serializers.CharField()
++    default_error_messages = {
++        'bad_token': _('Token is invalid or expired'),
++    }
++
++    def validate(self, attrs):
++        self.token = attrs['refresh']
++        return attrs
++
++    def save(self, **kwargs):
++        try:
++            RefreshToken(self.token).blacklist()
++        except TokenError:
++            self.fail('bad_token')
++
++
++class ForgotPasswordSerializer(serializers.Serializer):
++    email = serializers.EmailField(max_length=100, required=True)
++
++
++class RestorePasswordSerializer(serializers.Serializer):
++    code = serializers.CharField(max_length=100, required=True)
++    password = serializers.CharField(min_length=6, required=True)
++    password2 = serializers.CharField(min_length=6, required=True)
++
++    def validate(self, attrs):
++        password2 = attrs.pop('password2')
++        if password2 != attrs['password']:
++            raise serializers.ValidationError('Passwords did not match')
++        try:
++            user = User.objects.get(activation_code=attrs['code'])
++        except User.DoesNotExist:
++            serializers.ValidationError('Your code is incorrect!')
++        attrs['user'] = user
++        return attrs
++
++    def save(self, **kwargs):
++        data = self.validated_data
++        user = data['user']
++        user.set_password(data['password'])
++        user.activation_code = ''
++        user.save()
++        return user
++
++
+Index: ../../.idea/ev.22.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../../.idea/ev.22.iml b/../../.idea/ev.22.iml
+new file mode 100644
+--- /dev/null	
++++ b/../../.idea/ev.22.iml	
+@@ -0,0 +1,15 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<module type="PYTHON_MODULE" version="4">
++  <component name="NewModuleRootManager">
++    <content url="file://$MODULE_DIR$" />
++    <orderEntry type="inheritedJdk" />
++    <orderEntry type="sourceFolder" forTests="false" />
++  </component>
++  <component name="PyDocumentationSettings">
++    <option name="format" value="PLAIN" />
++    <option name="myDocStringFormat" value="Plain" />
++  </component>
++  <component name="TestRunnerService">
++    <option name="PROJECT_TEST_RUNNER" value="py.test" />
++  </component>
++</module>
+\ No newline at end of file
+Index: ../../DjangoProject/.idea/DjangoProject.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../../DjangoProject/.idea/DjangoProject.iml b/../../DjangoProject/.idea/DjangoProject.iml
+new file mode 100644
+--- /dev/null	
++++ b/../../DjangoProject/.idea/DjangoProject.iml	
+@@ -0,0 +1,14 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<module type="PYTHON_MODULE" version="4">
++  <component name="NewModuleRootManager">
++    <content url="file://$MODULE_DIR$">
++      <excludeFolder url="file://$MODULE_DIR$/venv" />
++    </content>
++    <orderEntry type="jdk" jdkName="Python 3.8" jdkType="Python SDK" />
++    <orderEntry type="sourceFolder" forTests="false" />
++  </component>
++  <component name="PyDocumentationSettings">
++    <option name="format" value="PLAIN" />
++    <option name="myDocStringFormat" value="Plain" />
++  </component>
++</module>
+\ No newline at end of file
