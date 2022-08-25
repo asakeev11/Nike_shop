@@ -1,17 +1,35 @@
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from rest_framework.generics import GenericAPIView
 from rest_framework_simplejwt.views import TokenObtainPairView
-from rest_framework_simplejwt.tokens import RefreshToken
-from rest_framework import permissions
+from rest_framework import generics, permissions
+from rest_framework.generics import GenericAPIView
+from rest_framework.filters import SearchFilter
 
 from django.contrib.auth import get_user_model
 from . import serializers
+from .permission import IsAccountOwner
 from .send_email import send_confirmation_email, send_reset_password
 
 User = get_user_model()
 
 
+# Список юзеров может смотреть только админ
+class UserListView(generics.ListAPIView):
+    queryset = User.objects.all()
+    filter_backends = (SearchFilter,)
+    search_fields = ('email',)
+    permission_classes = (permissions.IsAdminUser,)
+    serializer_class = serializers.UserListSerializer
+
+
+# Детальный обзор аккаунта юзера может смотреть только аутентифицированный владелец аккаунта
+class UserDetailView(generics.RetrieveAPIView):
+    queryset = User.objects.all()
+    permission_classes = (permissions.IsAuthenticated, IsAccountOwner)
+    serializer_class = serializers.UserSerializer
+
+
+# Регистрироваться могут все
 class RegistrationView(APIView):
     permission_classes = (permissions.AllowAny,)
 
@@ -27,6 +45,7 @@ class RegistrationView(APIView):
 
 class ActivationView(APIView):
     permission_classes = (permissions.AllowAny,)
+
     def get(self, request, activation_code):
         try:
             user = User.objects.get(activation_code=activation_code)
@@ -42,8 +61,10 @@ class ActivationView(APIView):
 
 class LoginApiView(TokenObtainPairView):
     serializer_class = serializers.LoginSerializer
+    permission_classes = (permissions.AllowAny,)
 
 
+# Выйти из аккаунта может только аутентифицированнный юзер
 class LogOutApiView(GenericAPIView):
     serializer_class = serializers.LogOutSerializer
     permission_classes = (permissions.IsAuthenticated,)

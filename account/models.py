@@ -47,7 +47,7 @@ class CustomUser(AbstractUser):
     REQUIRED_FIELDS = []
 
     is_active = models.BooleanField(
-        'active',
+        _('active'),
         default=False,
         help_text=_(
             'Designates whether this user should be treated as active. '
