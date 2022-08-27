@@ -17,10 +17,8 @@ from datetime import timedelta
 import django_on_heroku
 import dj_database_url
 
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
@@ -31,8 +29,10 @@ SECRET_KEY = 'django-insecure-92ug_e^s0lfss$5yezlv^od@g=!@va8n8f!k0u5g3*e*ncq)!y
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = [
+    '127.0.0.1'
+    'nike-shop-talgat.herokuapp.com'
+]
 
 # Application definition
 
@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    #installed apps
+    # installed apps
     'rest_framework',
     'rest_auth',
     'rest_framework_simplejwt',
@@ -52,7 +52,7 @@ INSTALLED_APPS = [
     'django_filters',
     'drf_yasg',
 
-    #my apps
+    # my apps
     'account',
     'category',
     'order',
@@ -68,6 +68,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
+
 ]
 
 ROOT_URLCONF = 'nike_shop.urls'
@@ -89,7 +91,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'nike_shop.wsgi.application'
-
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
@@ -132,7 +133,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
@@ -145,7 +145,6 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
