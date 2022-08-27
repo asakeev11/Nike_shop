@@ -10,7 +10,6 @@ class OrderItemSerializer(serializers.ModelSerializer):
 
     def to_representation(self, instance):
         repr = super().to_representation(instance)
-        # repr.pop('product')
         return repr
 
 
@@ -25,7 +24,6 @@ class OrderSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
         products = validated_data.pop('positions')
-        print(products, '12322434235234536365')
         user = self.context.get('request').user
         order = Order.objects.create(user=user, status='open')
         for prod in products:

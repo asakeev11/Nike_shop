@@ -6,7 +6,7 @@ from django.contrib.auth import get_user_model
 User = get_user_model()
 
 
-class Mark():
+class Mark:
     one = 1
     two = 2
     three = 3

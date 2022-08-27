@@ -24,7 +24,7 @@ class UpdateOrderStatusView(views.APIView):
     def patch(self, request, pk):
         status = request.data['status']
         if status not in ['in_process', 'closed']:
-            return response.Response('Invalyd status!', status=400)
+            return response.Response('Invalid status!', status=400)
         order = Order.objects.get(pk=pk)
         order.status = status
         order.save()
