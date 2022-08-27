@@ -1,1 +1,1 @@
-web: gunicorn nike_shop.wsgi
+web: gunicorn nike_shop.wsgi:application --log-file -
