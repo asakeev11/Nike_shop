@@ -6,9 +6,6 @@
       <change afterPath="$PROJECT_DIR$/../../DjangoProject/.idea/DjangoProject.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../DjangoProject/blog_project/.idea/blog_project.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../DjangoProject/shop_api/.idea/shop_api.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nike_shop/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/nike_shop/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
