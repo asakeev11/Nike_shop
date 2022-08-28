@@ -1,1 +1,0 @@
-web: gunicorn nike_shop.wsgi

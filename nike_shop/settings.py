@@ -14,8 +14,6 @@ import os
 from decouple import config
 from pathlib import Path
 from datetime import timedelta
-import django_on_heroku
-import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -27,12 +25,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-92ug_e^s0lfss$5yezlv^od@g=!@va8n8f!k0u5g3*e*ncq)!y'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = [
-    '127.0.0.1'
-    'nike-shop-talgat.herokuapp.com'
-]
+ALLOWED_HOSTS = []
 
 # Application definition
 
@@ -68,7 +63,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
 
 ]
 
@@ -96,14 +90,6 @@ WSGI_APPLICATION = 'nike_shop.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.sqlite3',
-    #     'NAME': BASE_DIR / 'db.sqlite3',
-    #     'USER': config('DB_USER'),
-    #     'PASSWORD': config('DB_PASSWORD'),
-    #     'HOST': config('DB_HOST'),
-    #     'PORT': config('DB_PORT', cast=int)
-    # },
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': config('DB_NAME'),
@@ -151,9 +137,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
-django_on_heroku.settings(locals())
 
 MEDIA_URL = 'media/'
 MEDIA_ROOT = BASE_DIR / 'media'
