@@ -9,3 +9,6 @@ PyJWT
 python-decouple
 drf-yasg
 gunicorn
+django-heroku
+whitenoise
+psycopg2
