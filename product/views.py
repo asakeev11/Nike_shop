@@ -32,6 +32,17 @@ class ProductViewSet(ModelViewSet):
             return serializers.ProductListSerializer
         return serializers.ProductDetailSerializer
 
+    def get_permissions(self):
+        # Лайкать , добавлять в избранное и просматривать/оставлять отзыв может аутентифицированный юзер
+        if self.action in ('like', 'unlike', 'favourite', 'reviews'):
+            return [permissions.IsAuthenticated()]
+        # Изменять, создавать и удалять может только админ
+        elif self.action in ('update', 'partial_update', 'destroy', 'create', 'get_likes'):
+            return [permissions.IsAdminUser()]
+        # Просматривать могут все
+        else:
+            return [permissions.AllowAny(), ]
+
     @action(['GET', 'POST'], detail=True)
     def reviews(self, request, pk=None):
         product = self.get_object()
@@ -44,17 +55,6 @@ class ProductViewSet(ModelViewSet):
         serializer.is_valid(raise_exception=True)
         serializer.save()
         return response.Response(serializer.data, status=201)
-
-    def get_permissions(self):
-        # Лайкать , добавлять в избранное может аутентифицированный юзер
-        if self.action in ('like', 'unlike', 'favourite'):
-            return [permissions.IsAuthenticated()]
-        # Изменять, создавать и удалять может только админ
-        elif self.action in ('update', 'partial_update', 'destroy', 'create', 'get_likes'):
-            return [permissions.IsAdminUser()]
-        # Просматривать могут все
-        else:
-            return [permissions.AllowAny(), ]
 
     # Добавление лайка
     @action(['POST'], detail=True)
