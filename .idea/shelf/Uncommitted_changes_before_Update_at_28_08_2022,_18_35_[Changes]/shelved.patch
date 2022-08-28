@@ -1,0 +1,17 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	
++++ b/.idea/workspace.xml	
+@@ -6,8 +6,6 @@
+       <change afterPath="$PROJECT_DIR$/../../DjangoProject/.idea/DjangoProject.iml" afterDir="false" />
+       <change afterPath="$PROJECT_DIR$/../../DjangoProject/blog_project/.idea/blog_project.iml" afterDir="false" />
+       <change afterPath="$PROJECT_DIR$/../../DjangoProject/shop_api/.idea/shop_api.iml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/shop_nike" beforeDir="false" afterPath="$PROJECT_DIR$/shop_nike" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
